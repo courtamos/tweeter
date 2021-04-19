@@ -28,3 +28,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
  }
 
+main {
+  width: 90%;
+  margin: auto;
+  background-color: #f4f1ec;
+}
