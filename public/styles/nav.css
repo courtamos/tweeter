@@ -1,8 +1,10 @@
 .nav-bar {
   background-color: #4056A1;
   height: 120px;
-  width: 100vmax;
+  width: 100%;
   padding: 0em 1.5em;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
