@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,7 +35,7 @@
   <!-- Top nav bar (fixed) -->
   <nav class="nav-bar">
     <span class="nav-text">tweeter</span>
-    <div class="new-tweet">
+    <div class="write-new-tweet">
       <span><b>Write</b> a new tweet</span>
       <span><i class="fas fa-angle-double-down"></i></span>
     </div>
@@ -54,10 +55,16 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>h1 Example</h1>
-    <h2>h2 Example</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit velit minus temporibus optio in laborum atque
-      officiis soluta praesentium ducimus, deleniti iure, natus, quas veniam? Blanditiis culpa optio placeat quia.</p>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <textarea rows="1" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div class="button-counter">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 

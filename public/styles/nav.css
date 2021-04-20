@@ -16,7 +16,7 @@
   color: #FFFF;
 }
 
-.new-tweet {
+.write-new-tweet {
   color: #FFFF;
   display: flex;
   flex-direction: column;

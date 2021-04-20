@@ -1,0 +1,37 @@
+#tweet-text {
+  resize: none;
+  width: 100%;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 5px solid #545149;
+  outline: none;
+  overflow:visible;
+  background: none;
+  padding-bottom: 10px;
+}
+
+#tweet-text::placeholder {
+  font-weight: bold;
+  color: #545149;
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.new-tweet button {
+  background-color: #4056A1;
+  color: #FFFF;
+  font-family: 'Bungee';
+  font-size: 20px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: none;
+}
+
+.counter {
+  font-family: 'Bungee';
+}
