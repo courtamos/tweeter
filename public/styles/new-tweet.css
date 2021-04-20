@@ -35,3 +35,7 @@
 .counter {
   font-family: 'Bungee';
 }
+
+.over-count {
+  color: red;
+}
