@@ -1,3 +1,9 @@
+const escape = function(str) { // function to prevent XSS
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = function(tweets) {
   tweets.sort((a, b) => b.created_at - a.created_at); // sorting tweets by created_at
   let $tweet = '';
@@ -19,7 +25,7 @@ const createTweetElement = function(tweet) {
       <h3 class="user">${tweet.user.handle}</h3>
     </header>
     <div class="users-tweet">
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
     </div>
     <footer>
       <span class="need_to_be_rendered">${timeago.format(tweet.created_at)}</span>
