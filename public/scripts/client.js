@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+/*
 const data = [
   {
     "user": {
@@ -60,6 +61,7 @@ const data = [
     "created_at": 1618977304595
   }
 ];
+*/
 
 const renderTweets = function(tweets) {
   let $tweet = ''; // var to hold tweet
@@ -84,7 +86,7 @@ const createTweetElement = function(tweet) {
       <p>${tweet.content.text}</p>
     </div>
     <footer>
-      <span class="need_to_be_rendered" datetime="${tweet.created_at}"></span>
+      <span class="need_to_be_rendered">${timeago.format(tweet.created_at)}</span>
       <span>
         <i class="fas fa-bookmark"></i>
         <i class="fas fa-retweet"></i>
@@ -113,10 +115,20 @@ $(document).ready(function() {
     }).catch((err) => {
       console.log(err);
     });
-
   });
 
 
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets/",
+      method: "GET",
+    }).then((res) => {
+      renderTweets(res);
+    });
+  };
 
-  renderTweets(data);
+  loadTweets();
+
+
+  // renderTweets(data);
 });
