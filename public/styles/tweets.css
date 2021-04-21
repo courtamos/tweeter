@@ -1,44 +1,49 @@
-.tweets {
+.tweet {
   margin-top: 40px;
   border: 4px solid #545149;
   padding: 15px;
 }
 
-.tweets header {
+.tweet header {
   padding: 0px 15px;
   display: flex;
   justify-content: space-between;
 }
 
-.tweets .user-info {
+.tweet .user-info {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.tweets .user-info i {
+/* .tweets .user-info i {
   font-size: 60px;
   margin-right: 20px;
+} */
+
+.tweet img {
+  width: 90px;
+  padding-right: 15px;
 }
 
-.tweets header h3.name {
+.tweet header h3.name {
   font-weight: normal;
 }
 
-.tweets header h3.user {
+.tweet header h3.user {
   color: #888477;
 }
 
-.tweets .users-tweet {
+.tweet .users-tweet {
   padding: 0px 15px;
   border-bottom: 5px solid #545149;
 }
 
-.tweets div p {
+.tweet div p {
   font-weight: bolder;
 }
 
-.tweets footer {
+.tweet footer {
   font-size: 20px;
   padding: 10px 15px;
   display: flex;
@@ -49,7 +54,7 @@
   padding-left: 10px;
 }
 
-.tweets:hover {
+.tweet:hover {
   box-shadow: 12px 12px 2px 1px #dbdad6;
 }
 
