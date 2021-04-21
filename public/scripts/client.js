@@ -1,4 +1,5 @@
 const renderTweets = function(tweets) {
+  tweets.sort((a, b) => b.created_at - a.created_at); // sorting tweets by created_at
   let $tweet = '';
 
   for (const tweet of tweets) { // loop through tweets in data array
@@ -37,11 +38,9 @@ $(document).ready(function() {
   const $form = $('#tweet-form');
 
   $form.on('submit', function(event) { // event listener for #tweet-form button
-    // console.log('submitting form - tweet button clicked');
     event.preventDefault(); // to prevent deafult of submit
 
     const $tweetText = $('#tweet-text').val(); // input text of tweet
-    // console.log('tweet text: ', $tweetText);
 
     if ($tweetText.length > 140 || $tweetText.length === 0) { // checking for invalid tweets
       alert('Error: Inavlid tweet. Please try again!');
@@ -52,8 +51,10 @@ $(document).ready(function() {
       method: "POST",
       data: $form.serialize()
     }).then((res) => {
-      // console.log('data: ', $form.serialize());
-      // console.log('data being sent to server');
+      document.getElementById("tweet-form").reset(); // resetting form after valid submit
+      
+      const newTweet = createTweetElement(res); // creating new tweet
+      $('#tweets-container').prepend(newTweet); // making tweet go to top of page/tweets
     }).catch((err) => {
       console.log(err);
     });
@@ -70,7 +71,4 @@ $(document).ready(function() {
   };
 
   loadTweets();
-
-
-  // renderTweets(data);
 });
