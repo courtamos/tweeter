@@ -1,76 +1,11 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-/*
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Courtney",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@aRareCourt" },
-    "content": {
-      "text": "Hello, a test from the object!"
-    },
-    "created_at": 1618976578348
-  },
-  {
-    "user": {
-      "name": "Dare",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SuperToastyDev"
-    },
-    "content": {
-      "text": "Another test tweet w/ the time rn"
-    },
-    "created_at": 1618976741716
-  },
-  {
-    "user": {
-      "name": "Kiara",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@lilNaughty" },
-    "content": {
-      "text": "Woof, woof, woof, I am a (naughty) dog"
-    },
-    "created_at": 1618977304595
-  }
-];
-*/
-
 const renderTweets = function(tweets) {
-  let $tweet = ''; // var to hold tweet
+  let $tweet = '';
 
   for (const tweet of tweets) { // loop through tweets in data array
     $tweet += createTweetElement(tweet); // create tweet from data
   }
 
-  $('#tweets-container').append($tweet); // inserting new tweets into #tweets-container section of html
+  $('#tweets-container').append($tweet); // inserting new tweets into #tweets-container
 };
 
 const createTweetElement = function(tweet) {
@@ -101,24 +36,31 @@ const createTweetElement = function(tweet) {
 $(document).ready(function() {
   const $form = $('#tweet-form');
 
-  $form.on('submit', function(event) { // event listener to prevent deafult of submit
-    console.log('submitting form - tweet button clicked');
-    event.preventDefault();
+  $form.on('submit', function(event) { // event listener for #tweet-form button
+    // console.log('submitting form - tweet button clicked');
+    event.preventDefault(); // to prevent deafult of submit
 
-    $.ajax({
+    const $tweetText = $('#tweet-text').val(); // input text of tweet
+    // console.log('tweet text: ', $tweetText);
+
+    if ($tweetText.length > 140 || $tweetText.length === 0) { // checking for invalid tweets
+      alert('Error: Inavlid tweet. Please try again!');
+    }
+
+    $.ajax({ // ajax post request to send new tweet from #tweet-from
       url: "/tweets/",
       method: "POST",
       data: $form.serialize()
     }).then((res) => {
-      console.log('data: ', $form.serialize());
-      console.log('data being sent to server');
+      // console.log('data: ', $form.serialize());
+      // console.log('data being sent to server');
     }).catch((err) => {
       console.log(err);
     });
   });
 
 
-  const loadTweets = () => {
+  const loadTweets = () => { // rending tweets from 'database'
     $.ajax({
       url: "/tweets/",
       method: "GET",
