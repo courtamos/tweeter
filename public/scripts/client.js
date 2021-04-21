@@ -49,7 +49,8 @@ $(document).ready(function() {
     const $tweetText = $('#tweet-text').val(); // input text of tweet
 
     if ($tweetText.length > 140 || $tweetText.length === 0) { // checking for invalid tweets
-      alert('Error: Inavlid tweet. Please try again!');
+      $('#error').slideDown();
+      return;
     }
 
     $.ajax({ // ajax post request to send new tweet from #tweet-from
@@ -57,6 +58,7 @@ $(document).ready(function() {
       method: "POST",
       data: $form.serialize()
     }).then((res) => {
+      $("#error").slideUp();
       document.getElementById("tweet-form").reset(); // resetting form after valid submit
       
       const newTweet = createTweetElement(res); // creating new tweet

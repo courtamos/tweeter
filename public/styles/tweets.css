@@ -36,6 +36,7 @@
 
 .tweet div p {
   font-weight: bolder;
+  overflow-wrap: break-word;
 }
 
 .tweet footer {
