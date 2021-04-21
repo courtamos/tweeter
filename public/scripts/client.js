@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 const data = [
   {
     "user": {
@@ -25,18 +26,49 @@ const data = [
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "Courtney",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@aRareCourt" },
+    "content": {
+      "text": "Hello, a test from the object!"
+    },
+    "created_at": 1618976578348
+  },
+  {
+    "user": {
+      "name": "Dare",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SuperToastyDev"
+    },
+    "content": {
+      "text": "Another test tweet w/ the time rn"
+    },
+    "created_at": 1618976741716
+  },
+  {
+    "user": {
+      "name": "Kiara",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@lilNaughty" },
+    "content": {
+      "text": "Woof, woof, woof, I am a (naughty) dog"
+    },
+    "created_at": 1618977304595
   }
 ];
 
 const renderTweets = function(tweets) {
-  let $tweet = '';
+  let $tweet = ''; // var to hold tweet
 
-  for (const tweet of tweets) { // loop through tweets
-    console.log('tweets in render: ', tweet);
-    $tweet += createTweetElement(tweet);
+  for (const tweet of tweets) { // loop through tweets in data array
+    $tweet += createTweetElement(tweet); // create tweet from data
   }
 
-  $('#tweets-container').append($tweet);
+  $('#tweets-container').append($tweet); // inserting new tweets into #tweets-container section of html
 };
 
 const createTweetElement = function(tweet) {
@@ -60,8 +92,6 @@ const createTweetElement = function(tweet) {
       </span>
     </footer>
   </article>`;
-
-  console.log('tweet create: ', $tweet);
 
   return $tweet;
 };
