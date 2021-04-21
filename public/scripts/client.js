@@ -100,8 +100,20 @@ $(document).ready(function() {
   const $form = $('#tweet-form');
 
   $form.on('submit', function(event) { // event listener to prevent deafult of submit
-    // console.log('inside submit');
+    console.log('submitting form - tweet button clicked');
     event.preventDefault();
+
+    $.ajax({
+      url: "/tweets/",
+      method: "POST",
+      data: $form.serialize()
+    }).then((res) => {
+      console.log('data: ', $form.serialize());
+      console.log('data being sent to server');
+    }).catch((err) => {
+      console.log(err);
+    });
+
   });
 
 
