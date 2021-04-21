@@ -1,3 +1,7 @@
+.new-tweet {
+  padding-top: 80px;
+}
+
 #tweet-text {
   resize: none;
   width: 100%;

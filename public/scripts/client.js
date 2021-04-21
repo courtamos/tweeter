@@ -97,5 +97,14 @@ const createTweetElement = function(tweet) {
 };
 
 $(document).ready(function() {
+  const $form = $('#tweet-form');
+
+  $form.on('submit', function(event) { // event listener to prevent deafult of submit
+    // console.log('inside submit');
+    event.preventDefault();
+  });
+
+
+
   renderTweets(data);
 });
