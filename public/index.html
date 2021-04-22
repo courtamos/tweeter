@@ -38,8 +38,9 @@
     crossorigin="anonymous"></script>
 </head>
 
+<!-- Top nav bar (fixed) -->
+
 <body>
-  <!-- Top nav bar (fixed) -->
   <nav class="nav-bar">
     <span class="nav-text">tweeter</span>
     <div class="write-new-tweet">
@@ -61,23 +62,25 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <div class="content-wrapper">
+    <main class="container">
 
-    <section class="new-tweet">
-      <p id="error">⚠️ cannot post an empty tweet or a tweet that exceed the chacter limit of 140 ⚠️</p>
-      <form action="/tweets" method="POST" id="tweet-form">
-        <textarea rows="3" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="button-counter">
-          <button type="submit" id="tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+      <section class="new-tweet">
+        <p id="error">⚠️ cannot post an empty tweet or a tweet that exceed the chacter limit of 140 ⚠️</p>
+        <form action="/tweets" method="POST" id="tweet-form">
+          <textarea rows="2" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="button-counter">
+            <button type="submit" id="tweet-button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-    <section id="tweets-container">
-    </section>
+      <section id="tweets-container">
+      </section>
 
-  </main>
+    </main>
+  </div>
 </body>
 
 </html>
