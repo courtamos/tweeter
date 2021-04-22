@@ -2,8 +2,8 @@
   margin-top: 120px;
   height: 400px;
   width: 100%;
-  background-color: #8389a1;
-  background-image: url("/images/back-pattern.png");
+  background-color: #C797F6;
+  background-image: url("/images/triangles.png");
 }
 
 .header-info {
@@ -19,4 +19,5 @@
 
 .header-name h2 {
   margin: 0px;
+  color: white;
 }

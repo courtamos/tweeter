@@ -2,6 +2,7 @@
   margin-top: 40px;
   border: 4px solid #545149;
   padding: 15px;
+  background-color: white;
 }
 
 .tweet header {
@@ -54,14 +55,8 @@
   box-shadow: 12px 12px 2px 1px #dbdad6;
 }
 
-.fas.fa-bookmark:hover {
-  color: #00a12b;
-}
-
-.fas.fa-retweet:hover {
-  color: #4056A1;
-}
-
+.fas.fa-bookmark:hover,
+.fas.fa-retweet:hover,
 .fas.fa-heart:hover {
-  color: #b30000;
+  color: #8F4FCF;
 }

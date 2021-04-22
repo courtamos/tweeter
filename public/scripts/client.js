@@ -11,7 +11,7 @@ const renderTweets = function(tweets) {
   for (const tweet of tweets) { // loop through tweets in data array
     $tweet += createTweetElement(tweet); // create tweet from data
   }
-
+  
   $('#tweets-container').append($tweet); // inserting new tweets into #tweets-container
 };
 
@@ -60,7 +60,8 @@ $(document).ready(function() {
     }).then((res) => {
       $("#error").slideUp();
       document.getElementById("tweet-form").reset(); // resetting form after valid submit
-      
+      $('.counter').text(140); // resetting counter back to 140 chars
+
       const newTweet = createTweetElement(res); // creating new tweet
       $('#tweets-container').prepend(newTweet); // making tweet go to top of page/tweets
     }).catch((err) => {

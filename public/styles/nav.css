@@ -1,5 +1,5 @@
 .nav-bar {
-  background-color: #4056A1;
+  background-color: #8F4FCF;
   height: 120px;
   width: 100%;
   padding: 0em 1.5em;
@@ -24,6 +24,6 @@
 }
 
 .fa-angle-double-down {
-  color:orangered; 
+  color: #531D87; 
   size: 25px;
 }
