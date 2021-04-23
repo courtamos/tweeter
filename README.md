@@ -4,9 +4,9 @@ Tweeter is a simple, single-page Twitter clone, built with HTML, CSS, JS, jQuery
 
 ## Final Products
 
-!["screenshot of tweeter on a large screen"](link)
-!["screenshot of tweeter on a small screen"](link)
-!["screenshot of tweeter error when composed tweet is invalid"](link)
+!["screenshot of tweeter on a large screen"](https://github.com/courtamos/tweeter/blob/master/docs/large-screen.png?raw=true)
+!["screenshot of tweeter on a small screen"](https://github.com/courtamos/tweeter/blob/master/docs/small-screen.png?raw=true)
+!["screenshot of tweeter error when composed tweet is invalid"](https://github.com/courtamos/tweeter/blob/master/docs/tweeter-error.png?raw=true)
 
 ## Getting Started
 
