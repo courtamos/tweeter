@@ -1,9 +1,11 @@
-const escape = function(str) { // function to prevent XSS
+// PREVENT XSS
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// RENDER TWEETS
 const renderTweets = function(tweets) {
   tweets.sort((a, b) => b.created_at - a.created_at); // sorting tweets by created_at
   let $tweet = '';
@@ -15,6 +17,7 @@ const renderTweets = function(tweets) {
   $('#tweets-container').append($tweet); // inserting new tweets into #tweets-container
 };
 
+// CREATE NEW TWEET
 const createTweetElement = function(tweet) {
   const $tweet = `<article class="tweet">
     <header>
@@ -40,6 +43,7 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+// ON DOCUMENT READY - EXECUTE (ASYNC)
 $(document).ready(function() {
   const $form = $('#tweet-form');
 
@@ -70,7 +74,7 @@ $(document).ready(function() {
   });
 
 
-  const loadTweets = () => { // rending tweets from 'database'
+  const loadTweets = function() { // rending tweets from 'database'
     $.ajax({
       url: "/tweets/",
       method: "GET",

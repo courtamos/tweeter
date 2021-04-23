@@ -22,7 +22,7 @@
   color: white;
 }
 
-/* Responsive Design code */
+/* Responsive Design Code */
 @media only screen and (min-width: 1024px) {
   .header {
     position: fixed;
@@ -32,5 +32,4 @@
     align-items: center;
     justify-content: center;
   }
-
 }

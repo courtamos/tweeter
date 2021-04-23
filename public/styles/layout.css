@@ -10,9 +10,7 @@
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/* Global layout stuff */
 
 body {
   color: #545149;
@@ -20,9 +18,7 @@ body {
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Additional CSS can be defined below or in other CSS files, as per instructions */
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -35,7 +31,7 @@ main.container {
   padding-bottom: 120px;
 }
 
-/* Responsive Design code */
+/* Responsive Design Code */
 @media only screen and (min-width: 1024px) {
   .content-wrapper {
     width: 50%;

@@ -64,9 +64,8 @@
   <!-- Page-specific (main) content here -->
   <div class="content-wrapper">
     <main class="container">
-
       <section class="new-tweet">
-        <p id="error">⚠️ cannot post an empty tweet or a tweet that exceed the chacter limit of 140 ⚠️</p>
+        <p id="error">⚠️ cannot post an empty tweet or a tweet that exceed the character count limit of 140 ⚠️</p>
         <form action="/tweets" method="POST" id="tweet-form">
           <textarea rows="2" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="button-counter">
@@ -76,11 +75,11 @@
         </form>
       </section>
 
-      <section id="tweets-container">
-      </section>
+      <section id="tweets-container"></section>
 
     </main>
   </div>
+
 </body>
 
 </html>
